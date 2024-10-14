@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Tracker Dashboard</title>
+    <link rel="stylesheet" href="app.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <main class="dashboard">
+        <header class="dashboard-header">
+            <h1>Workout Tracker</h1>
+        </header>
+
+        <section class="log-workout">
+            <h2>Log Your Workout</h2>
+            <form id="logWorkoutForm">
+                <div class="form-group">
+                    <label for="exerciseType">Exercise Type</label>
+                    <input type="text" id="exerciseType" name="exerciseType" placeholder="e.g. Running, Lifting" required>
+                </div>
+                <div class="form-group">
+                    <label for="duration">Duration (minutes)</label>
+                    <input type="number" id="duration" name="duration" required>
+                </div>
+                <div class="form-group">
+                    <label for="intensity">Intensity (1-10)</label>
+                    <input type="number" id="intensity" name="intensity" min="1" max="10" required>
+                </div>
+                <button class="button type="submit">Log Workout</button>
+            </form>
+        </section>
+
+        <section class="daily-summary">
+            <h2>Today's Workout Summary</h2>
+            <ul id="summaryList"></ul>
+        </section>
+
+        <section class="workout-history">
+            <h2>Workout History</h2>
+            <table id="historyTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Exercise Type</th>
+                        <th>Duration (mins)</th>
+                        <th>Intensity</th>
+                        <th>Calories Burned</th>
+                    </tr>
+                </thead>
+                <tbody id="historyBody"></tbody>
+            </table>
+        </section>
+
+        <section class="dashboard-content">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>Total Workouts</h3>
+                    <p id="totalWorkouts">0</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-fire"></i>
+                    <h3>Calories Burned</h3>
+                    <p id="totalCalories">0 kcal</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Total Duration</h3>
+                    <p id="totalDuration">0 hours</p>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="workoutChart"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

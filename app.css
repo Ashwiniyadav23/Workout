@@ -1,0 +1,200 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0e1c30;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #1c2a4c;
+    padding: 20px;
+    text-align: center;
+    color: #f6c90e;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+}
+
+header::after {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 4px;
+    background: linear-gradient(to right, #f6c90e, #dab909);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+h1, h2 {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.log-workout {
+    margin: 20px;
+    padding: 20px;
+    background-color: #2a3b5d;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.log-workout:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    animation: shadowPulse 0.5s infinite alternate;
+}
+
+.log-workout h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #f6c90e;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #e2e2e2;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #f6c90e;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button {
+    background-color: #f6c90e;
+    color: #0e1c30;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #dab909;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.form-group input:focus {
+    border-color: #dab909;
+    outline: none;
+    box-shadow: 0 0 8px rgba(218, 185, 9, 0.5);
+}
+
+.daily-summary, .workout-history {
+    margin: 20px;
+    padding: 20px;
+    background-color: #2a3b5d;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    background-color: #4e4f6c;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    background-color: #35355d;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+.stat-card h3 {
+    margin: 10px 0;
+    color: #f6c90e;
+    font-size: 1.2rem;
+}
+
+.chart-container {
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #f6c90e;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+
+th {
+    background-color: #1c2a4c;
+    color: #f6c90e;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #293751;
+}
+
+tbody tr:hover {
+    background-color: #35355d;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes shadowPulse {
+    0% {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+    100% {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
